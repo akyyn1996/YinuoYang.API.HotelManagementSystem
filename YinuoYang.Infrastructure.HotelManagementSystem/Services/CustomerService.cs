@@ -99,36 +99,38 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
             response.CName = customer.CName;
             response.Email = customer.Email;
             response.Id = customer.Id;
-            //response.Room = customer.Room;
             response.RoomNo = customer.RoomNo;
             response.Phone = customer.Phone;
             response.TotalPersons = customer.TotalPersons;
-            response.Room = new RoomResponseModel
+            if (customer.Room !=null)
             {
-                Id = customer.Room.Id,
-                RTCode = customer.Room.RTCode,
-                Status = customer.Room.Status,
-                RoomType = new RoomTypeResponseModel
+                response.Room = new RoomResponseModel
                 {
-                    Id = customer.Room.Roomtype.Id,
-                    Rent = customer.Room.Roomtype.Rent,
-                    Rtdesc = customer.Room.Roomtype.Rtdesc
+                    Id = customer.Room.Id,
+                    RTCode = customer.Room.RTCode,
+                    Status = customer.Room.Status,
+                    RoomType = new RoomTypeResponseModel
+                    {
+                        Id = customer.Room.Roomtype.Id,
+                        Rent = customer.Room.Roomtype.Rent,
+                        Rtdesc = customer.Room.Roomtype.Rtdesc
+                    }
+                };
+                var services = await _serviceRepository.GetServicesByCustomer(customer.Room.Id);
+                response.Services = new List<Service>();
+                foreach (var service in services)
+                {
+                    response.Services.Add(new Service
+                    {
+                        amount = service.amount,
+                        Id = service.Id,
+                        RoomNo = service.RoomNo,
+                        Sdesc = service.Sdesc,
+                        ServiceDate = service.ServiceDate
+                    });
                 }
-            };
-            var services = await _serviceRepository.GetServicesByCustomer(customer.Room.Id);
-            response.Services = new List<Service>();
-            foreach (var service in services)
-            {
-                response.Services.Add(new Service
-                {
-                    amount = service.amount,
-                    Id = service.Id,
-                    RoomNo = service.RoomNo,
-                    Sdesc = service.Sdesc,
-                    ServiceDate = service.ServiceDate
-                });
             }
-            //response.Services = customer.Room.Services;
+
             return response;
         }
 
