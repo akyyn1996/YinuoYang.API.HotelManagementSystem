@@ -1,0 +1,9 @@
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.deps.json
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.dll
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.pdb
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.csprojAssemblyReference.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.AssemblyInfoInputs.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.AssemblyInfo.cs
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.dll
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Core.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.pdb

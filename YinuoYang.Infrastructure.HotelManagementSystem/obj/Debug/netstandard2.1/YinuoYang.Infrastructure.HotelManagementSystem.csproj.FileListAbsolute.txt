@@ -1,0 +1,12 @@
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.deps.json
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.dll
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.pdb
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.csprojAssemblyReference.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.AssemblyInfoInputs.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.AssemblyInfo.cs
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.dll
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.pdb
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.dll
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\bin\Debug\netstandard2.1\YinuoYang.Core.HotelManagementSystem.pdb
+C:\Users\62316\source\repos\HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem\obj\Debug\netstandard2.1\YinuoYang.Infrastructure.HotelManagementSystem.csproj.CopyComplete
