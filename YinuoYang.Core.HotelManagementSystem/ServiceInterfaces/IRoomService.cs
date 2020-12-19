@@ -12,5 +12,6 @@ namespace YinuoYang.Core.HotelManagementSystem.ServiceInterfaces
         Task DeleteRoomAsync(int roomId);
 
         Task<IEnumerable<RoomResponseModel>> GetAllRoomsAsync();
+        Task<RoomResponseModel> GetRoomByIdAsync(int id);
     }
 }

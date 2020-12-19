@@ -14,13 +14,14 @@ namespace YinuoYang.Core.HotelManagementSystem.Models.Request
         public string CName { get; set; }
 
         [StringLength(200)]
-        [EmailAddress]
+
         public string Address { get; set; }
 
         [StringLength(20)]
         public string Phone { get; set; }
 
         [StringLength(40)]
+        [EmailAddress]
         public string Email { get; set; }
         public DateTime? CheckIn { get; set; }
         public int? TotalPersons { get; set; }

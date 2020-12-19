@@ -9,6 +9,8 @@ namespace YinuoYang.Core.HotelManagementSystem.Models.Response
         public int? RTCode { get; set; }
         public bool? Status { get; set; }
 
-        public Roomtype Roomtype { get; set; }
+        //public Roomtype Roomtype { get; set; }
+
+        public RoomTypeResponseModel RoomType { get; set; }
     }
 }

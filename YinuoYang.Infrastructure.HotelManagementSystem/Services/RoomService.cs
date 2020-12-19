@@ -36,7 +36,8 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
 
         public async Task<IEnumerable<RoomResponseModel>> GetAllRoomsAsync()
         {
-            var rooms = await _roomRepository.ListAllAsync();
+            var rooms = await _roomRepository.ListAllWithIncludesAsync(
+                r => r.Id != null,p => p.Roomtype);
             var response = new List<RoomResponseModel>();
             foreach (var room in rooms)
             {
@@ -44,10 +45,35 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
                 {
                     Id = room.Id,
                     RTCode = room.RTCode,
-                    Status = room.Status
+                    Status = room.Status,
+                    RoomType = new RoomTypeResponseModel
+                    {
+                        Id = room.Roomtype.Id,
+                        Rent = room.Roomtype.Rent,
+                        Rtdesc = room.Roomtype.Rtdesc
+                    }
                 });
             }
 
+            return response;
+        }
+
+        public async Task<RoomResponseModel> GetRoomByIdAsync(int id)
+        {
+            
+            var room =await _roomRepository.GetByIdAsync(id);
+            var response = new RoomResponseModel
+            {
+                Id = room.Id,
+                RTCode = room.RTCode,
+                Status = room.Status,
+                RoomType = new RoomTypeResponseModel
+                {
+                    Id = room.Roomtype.Id,
+                    Rent = room.Roomtype.Rent,
+                    Rtdesc = room.Roomtype.Rtdesc
+                }
+            };
             return response;
         }
 

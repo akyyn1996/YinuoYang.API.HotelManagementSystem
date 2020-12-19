@@ -16,7 +16,7 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Repositories
         public override async Task<Customer> GetByIdAsync(int id)
         {
             var customer = await _dbContext.Customers
-                .Include(m => m.Room).ThenInclude(m => m.Services)
+                .Include(m => m.Room).ThenInclude(m => m.Services).Include(m=>m.Room).ThenInclude(m=> m.Roomtype)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null) return null;
 

@@ -12,10 +12,11 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
-
-        public CustomerService(ICustomerRepository customerRepository)
+        private readonly IServiceRepository _serviceRepository;
+        public CustomerService(ICustomerRepository customerRepository, IServiceRepository serviceRepository)
         {
             _customerRepository = customerRepository;
+            _serviceRepository = serviceRepository;
         }
 
         public async Task AddCustomerAsync(CustomerRequestModel customerRequest)
@@ -98,11 +99,36 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
             response.CName = customer.CName;
             response.Email = customer.Email;
             response.Id = customer.Id;
-            response.Room = customer.Room;
+            //response.Room = customer.Room;
             response.RoomNo = customer.RoomNo;
             response.Phone = customer.Phone;
             response.TotalPersons = customer.TotalPersons;
-            response.Services = customer.Room.Services;
+            response.Room = new RoomResponseModel
+            {
+                Id = customer.Room.Id,
+                RTCode = customer.Room.RTCode,
+                Status = customer.Room.Status,
+                RoomType = new RoomTypeResponseModel
+                {
+                    Id = customer.Room.Roomtype.Id,
+                    Rent = customer.Room.Roomtype.Rent,
+                    Rtdesc = customer.Room.Roomtype.Rtdesc
+                }
+            };
+            var services = await _serviceRepository.GetServicesByCustomer(customer.Room.Id);
+            response.Services = new List<Service>();
+            foreach (var service in services)
+            {
+                response.Services.Add(new Service
+                {
+                    amount = service.amount,
+                    Id = service.Id,
+                    RoomNo = service.RoomNo,
+                    Sdesc = service.Sdesc,
+                    ServiceDate = service.ServiceDate
+                });
+            }
+            //response.Services = customer.Room.Services;
             return response;
         }
 

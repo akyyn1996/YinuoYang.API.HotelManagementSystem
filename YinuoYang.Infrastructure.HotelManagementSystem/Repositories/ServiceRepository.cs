@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using YinuoYang.Core.HotelManagementSystem.Entities;
 using YinuoYang.Core.HotelManagementSystem.RepositoryInterfaces;
 using YinuoYang.Infrastructure.HotelManagementSystem.Data;
@@ -13,9 +15,10 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Repositories
         }
 
 
-        public Task<IEnumerable<Service>> GetServicesByCustomer(int customerId)
+        public async Task<IEnumerable<Service>> GetServicesByCustomer(int roomId)
         {
-            throw new System.NotImplementedException();
+            var services = await _dbContext.Services.Where(s => s.RoomNo == roomId).ToListAsync();
+            return services;
         }
     }
 }

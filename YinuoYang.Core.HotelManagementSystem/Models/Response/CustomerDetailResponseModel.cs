@@ -17,7 +17,7 @@ namespace YinuoYang.Core.HotelManagementSystem.Models.Response
         public int? BookingDays { get; set; }
         public decimal? Advance { get; set; }
 
-        public Room Room { get; set; }
+        public RoomResponseModel Room { get; set; }
 
         public ICollection<Service> Services { get; set; }
     }
