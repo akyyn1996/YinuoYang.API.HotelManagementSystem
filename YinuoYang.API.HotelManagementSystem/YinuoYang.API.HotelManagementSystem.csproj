@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\YinuoYang.Core.HotelManagementSystem\YinuoYang.Core.HotelManagementSystem.csproj" />
     <ProjectReference Include="..\YinuoYang.Infrastructure.HotelManagementSystem\YinuoYang.Infrastructure.HotelManagementSystem.csproj" />
   </ItemGroup>

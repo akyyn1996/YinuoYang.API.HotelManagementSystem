@@ -9,5 +9,6 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Repositories
         public RoomtypeRepository(HotelManagementDbContext dbContext) : base(dbContext)
         {
         }
+
     }
 }

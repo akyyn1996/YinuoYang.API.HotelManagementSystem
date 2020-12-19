@@ -6,13 +6,14 @@ using YinuoYang.Infrastructure.HotelManagementSystem.Data;
 
 namespace YinuoYang.Infrastructure.HotelManagementSystem.Repositories
 {
-    public class ServiceRepository : EfRepository<Room>, IRoomRepository
+    public class ServiceRepository : EfRepository<Service>, IServiceRepository
     {
         public ServiceRepository(HotelManagementDbContext dbContext) : base(dbContext)
         {
         }
 
-        public Task<IEnumerable<Room>> GetRoomsByCustomer(int customerId)
+
+        public Task<IEnumerable<Service>> GetServicesByCustomer(int customerId)
         {
             throw new System.NotImplementedException();
         }

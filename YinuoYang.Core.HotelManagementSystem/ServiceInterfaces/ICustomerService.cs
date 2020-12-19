@@ -14,7 +14,7 @@ namespace YinuoYang.Core.HotelManagementSystem.ServiceInterfaces
 
         Task AddCustomerAsync(CustomerRequestModel customerRequest);
         Task UpdateCustomerAsync(CustomerRequestModel customerRequest);
-        Task DeleteCustomerAsync(int roomTypeId);
+        Task DeleteCustomerAsync(int customerId);
 
         Task<RoomResponseModel> GetRoomForCustomerAsync(int customerId);
 

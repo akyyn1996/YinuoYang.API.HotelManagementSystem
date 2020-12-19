@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using YinuoYang.Core.HotelManagementSystem.Entities;
 
 namespace YinuoYang.Core.HotelManagementSystem.Models.Response
@@ -17,5 +18,7 @@ namespace YinuoYang.Core.HotelManagementSystem.Models.Response
         public decimal? Advance { get; set; }
 
         public Room Room { get; set; }
+
+        public ICollection<Service> Services { get; set; }
     }
 }

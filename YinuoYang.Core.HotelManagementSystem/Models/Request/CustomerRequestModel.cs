@@ -5,18 +5,28 @@ namespace YinuoYang.Core.HotelManagementSystem.Models.Request
 {
     public class CustomerRequestModel
     {
-        //don`t need id in the request or not?
+
         public int Id { get; set; }
         public int? RoomNo { get; set; }
         
         [Required]
+        [StringLength(20)]
         public string CName { get; set; }
+
+        [StringLength(200)]
+        [EmailAddress]
         public string Address { get; set; }
+
+        [StringLength(20)]
         public string Phone { get; set; }
+
+        [StringLength(40)]
         public string Email { get; set; }
         public DateTime? CheckIn { get; set; }
         public int? TotalPersons { get; set; }
         public int? BookingDays { get; set; }
+
+        [Range(0, 500000000)]
         public decimal? Advance { get; set; }
     }
 }

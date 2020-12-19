@@ -1,31 +1,68 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using YinuoYang.Core.HotelManagementSystem.Entities;
 using YinuoYang.Core.HotelManagementSystem.Models.Request;
 using YinuoYang.Core.HotelManagementSystem.Models.Response;
+using YinuoYang.Core.HotelManagementSystem.RepositoryInterfaces;
 using YinuoYang.Core.HotelManagementSystem.ServiceInterfaces;
 
 namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
 {
     public class RoomTypeService : IRoomTypeService
     {
-        public Task AddRoomTypeAsync(RoomTypeRequestModel roomTypeRequest)
+        private readonly IRoomtypeRepository _roomtypeRepository;
+
+        public RoomTypeService(IRoomtypeRepository roomtypeRepository)
         {
-            throw new System.NotImplementedException();
+            _roomtypeRepository = roomtypeRepository;
+        }
+        public async Task AddRoomTypeAsync(RoomTypeRequestModel roomTypeRequest)
+        {
+            var roomType = new Roomtype
+            {
+                Id = roomTypeRequest.Id,
+                Rent = roomTypeRequest.Rent,
+                Rtdesc = roomTypeRequest.Rtdesc
+            };
+            await _roomtypeRepository.AddAsync(roomType);
+
         }
 
-        public Task DeleteRoomTypeAsync(int roomTypeId)
+        public async Task DeleteRoomTypeAsync(int roomTypeId)
         {
-            throw new System.NotImplementedException();
+            var roomType = await _roomtypeRepository.GetByIdAsync(roomTypeId);
+            await _roomtypeRepository.DeleteAsync(roomType);
+
         }
 
-        public Task<IEnumerable<RoomTypeResponseModel>> GetAllRoomTypesAsync()
+        public async Task<IEnumerable<RoomTypeResponseModel>> GetAllRoomTypesAsync()
         {
-            throw new System.NotImplementedException();
+            var roomTypes = await _roomtypeRepository.ListAllAsync();
+            var response = new List<RoomTypeResponseModel>();
+            foreach (var roomtype in roomTypes)
+            {
+                response.Add(new RoomTypeResponseModel
+                {
+                    Id = roomtype.Id,
+                    Rent = roomtype.Rent,
+                    Rtdesc = roomtype.Rtdesc
+                });
+            }
+
+            return response;
+
         }
 
-        public Task UpdateRoomTypeAsync(RoomTypeRequestModel roomTypeRequest)
+        public async Task UpdateRoomTypeAsync(RoomTypeRequestModel roomTypeRequest)
         {
-            throw new System.NotImplementedException();
+
+            var roomType = new Roomtype
+            {
+                Id = roomTypeRequest.Id,
+                Rent = roomTypeRequest.Rent,
+                Rtdesc = roomTypeRequest.Rtdesc
+            };
+            await _roomtypeRepository.UpdateAsync(roomType);
         }
     }
 }
