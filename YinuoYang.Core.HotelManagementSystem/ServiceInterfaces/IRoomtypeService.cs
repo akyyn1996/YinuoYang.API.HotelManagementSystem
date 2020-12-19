@@ -1,12 +1,16 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using YinuoYang.Core.HotelManagementSystem.Models.Request;
+using YinuoYang.Core.HotelManagementSystem.Models.Response;
 
 namespace YinuoYang.Core.HotelManagementSystem.ServiceInterfaces
 {
-    public interface IRoomtypeService
+    public interface IRoomTypeService
     {
-        Task AddRoomType(RoomTypeRequestModel reviewRequest);
-        Task UpdateRoomType(RoomTypeRequestModel reviewRequest);
-        Task DeleteRoomType(int roomTypeId);
+        Task AddRoomTypeAsync(RoomTypeRequestModel roomTypeRequest);
+        Task UpdateRoomTypeAsync(RoomTypeRequestModel roomTypeRequest);
+        Task DeleteRoomTypeAsync(int roomTypeId);
+
+        Task<IEnumerable<RoomTypeResponseModel>> GetAllRoomTypesAsync();
     }
 }
