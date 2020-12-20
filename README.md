@@ -6,7 +6,8 @@ The HotelManagementSystem backend part, including .Net Core Web API, Entity Fram
 
 
 Following API has implemented:
-Customer
+
+Customer:
 
 POST
 ​/api​/Customer
@@ -22,39 +23,54 @@ DELETE
 
 GET
 ​/api​/Customer​/{id}
-Room
+
+Room:
 
 GET
 ​/api​/Room
+
 POST
 ​/api​/Room
+
 PUT
 ​/api​/Room
+
 GET
 ​/api​/Room​/available
+
 PUT
 ​/api​/Room​/leave​/{id}
+
 DELETE
 ​/api​/Room​/{id}
+
 GET
 ​/api​/Room​/{id}
-Roomtype
+
+Roomtype:
 
 GET
 ​/api​/Roomtype
+
 POST
 ​/api​/Roomtype
+
 PUT
 ​/api​/Roomtype
+
 DELETE
 ​/api​/Roomtype​/{id}
-Service
+
+Service:
 
 GET
 ​/api​/Service
+
 POST
 ​/api​/Service
+
 PUT
 ​/api​/Service
+
 DELETE
 ​/api​/Service​/{id}
