@@ -34,6 +34,9 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
             await _roomRepository.DeleteAsync(roomType);
         }
 
+
+
+
         public async Task<IEnumerable<RoomResponseModel>> GetAllRoomsAsync()
         {
             var rooms = await _roomRepository.ListAllWithIncludesAsync(
@@ -58,6 +61,31 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
             return response;
         }
 
+        public async Task<IEnumerable<RoomResponseModel>> GetAvailableRoomsAsync()
+        {
+            var rooms = await _roomRepository.ListAllWithIncludesAsync(
+                r => r.Status == false, p => p.Roomtype);
+            var response = new List<RoomResponseModel>();
+            foreach (var room in rooms)
+            {
+                response.Add(new RoomResponseModel
+                {
+                    Id = room.Id,
+                    RTCode = room.RTCode,
+                    Status = room.Status,
+                    RoomType = new RoomTypeResponseModel
+                    {
+                        Id = room.Roomtype.Id,
+                        Rent = room.Roomtype.Rent,
+                        Rtdesc = room.Roomtype.Rtdesc
+                    }
+                });
+            }
+
+            return response;
+        }
+
+
         public async Task<RoomResponseModel> GetRoomByIdAsync(int id)
         {
             
@@ -77,6 +105,13 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
             return response;
         }
 
+        public async Task SetRoomOccupiedByIdAsync(int id)
+        {
+            var room = await _roomRepository.GetByIdAsync(id);
+            room.Status = false;
+            await _roomRepository.UpdateAsync(room);
+        }
+
         public async Task UpdateRoomAsync(RoomRequestModel roomRequest)
         {
             var room = new Room
@@ -88,5 +123,7 @@ namespace YinuoYang.Infrastructure.HotelManagementSystem.Services
 
             await _roomRepository.UpdateAsync(room);
         }
+
+
     }
 }

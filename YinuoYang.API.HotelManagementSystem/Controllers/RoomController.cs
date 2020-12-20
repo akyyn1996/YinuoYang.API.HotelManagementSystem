@@ -28,6 +28,14 @@ namespace YinuoYang.API.HotelManagementSystem.Controllers
             return Ok(rooms);
         }
 
+        [HttpGet]
+        [Route("available")]
+        public async Task<IActionResult> GetAvailableRooms()
+        {
+            var rooms = await _roomService.GetAvailableRoomsAsync();
+            return Ok(rooms);
+        }
+
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> CreateNewRoom(RoomRequestModel roomRequest)
@@ -41,6 +49,14 @@ namespace YinuoYang.API.HotelManagementSystem.Controllers
         public async Task<IActionResult> UpdateRoom(RoomRequestModel roomRequest)
         {
             await _roomService.UpdateRoomAsync(roomRequest);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("leave/{id}")]
+        public async Task<IActionResult> UpdateRoom(int id)
+        {
+            await _roomService.SetRoomOccupiedByIdAsync(id);
             return Ok();
         }
 

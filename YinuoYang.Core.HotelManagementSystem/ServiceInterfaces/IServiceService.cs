@@ -12,5 +12,7 @@ namespace YinuoYang.Core.HotelManagementSystem.ServiceInterfaces
         Task DeleteServiceAsync(int serviceId);
 
         Task<IEnumerable<ServiceResponseModel>> GetAllServicesAsync();
+
+
     }
 }
