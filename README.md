@@ -10,12 +10,16 @@ Customer
 
 POST
 ​/api​/Customer
+
 PUT
 ​/api​/Customer
+
 GET
 ​/api​/Customer
+
 DELETE
 ​/api​/Customer​/{customerId}
+
 GET
 ​/api​/Customer​/{id}
 Room
