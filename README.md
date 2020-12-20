@@ -5,6 +5,8 @@ The HotelManagementSystem backend part, including .Net Core Web API, Entity Fram
 
 
 
+
+
 Following API has implemented:
 
 Customer:
