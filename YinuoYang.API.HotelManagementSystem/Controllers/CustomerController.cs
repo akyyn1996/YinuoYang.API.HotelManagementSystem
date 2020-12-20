@@ -26,7 +26,7 @@ namespace YinuoYang.API.HotelManagementSystem.Controllers
         public async Task<IActionResult> CreateNewCustomerAsync(CustomerRequestModel customerRequest)
         {
             await _customerService.AddCustomerAsync(customerRequest);
-            return Ok();
+            return Ok(customerRequest);
         }
 
         [HttpPut]
@@ -38,7 +38,7 @@ namespace YinuoYang.API.HotelManagementSystem.Controllers
         }
 
         [HttpDelete]
-        [Route("")]
+        [Route("{customerId}")]
         public async Task<IActionResult> DeleteCustomerAsync(int customerId)
         {
             await _customerService.DeleteCustomerAsync(customerId);

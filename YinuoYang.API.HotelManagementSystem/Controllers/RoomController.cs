@@ -45,7 +45,7 @@ namespace YinuoYang.API.HotelManagementSystem.Controllers
         }
 
         [HttpDelete]
-        [Route("id")]
+        [Route("{id}")]
         public async Task<IActionResult> DeleteRoom(int id)
         {
             await _roomService.DeleteRoomAsync(id);
